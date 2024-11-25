@@ -15,6 +15,11 @@ class TicTacToe:
             self.humanPLayer = "O"
             self.botPlayer = "X"
 
+    def generate_tic_tac_toe_board():
+        #Crea una tabla 3x3 con los numeros del 1 al 9
+        board = [[(i*3+j+1) for j in range(3)] for i in range(3)]
+        return board
+        
     def show_board(self):
         print("")
         for i in range(3):
@@ -164,6 +169,7 @@ class ComputerPlayer(TicTacToe):
 while True:
     #Sugiero mostrar una unica vez donde es cada posicion por numero
     tic_tac_toe = TicTacToe()
+    tic_tac_toe.generate_tic_tac_toe_board()
     tic_tac_toe.start()
     continuar = str(input("Desea jugar de nuevo? [Y/N]"))
     if continuar == "Y":
